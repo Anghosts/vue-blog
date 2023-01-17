@@ -1,0 +1,44 @@
+/* textarea 元素高度 */
+.el-textarea textarea {
+  min-height: 55px !important;
+  background-color: #fff;
+} 
+.el-textarea textarea:focus {
+  border-color: #6f86d6;
+}
+
+/* 页头鼠标经过变色 */
+.el-page-header__left:hover {
+  color: #6f86d6;
+}
+
+/* 头部导航栏高度 */
+.el-menu--horizontal>.el-menu-item,
+.el-menu--horizontal>.el-submenu .el-submenu__title {
+  height: 55px !important;
+  line-height: 55px !important;
+}
+/* 导航栏背景颜色 */
+.el-menu {
+  background-color: transparent !important;
+}
+.el-menu-item:hover {
+  background-color: transparent !important;
+}
+.el-menu-item:focus {
+  background-color: transparent !important;
+}
+.el-menu-item i {
+  color: inherit !important;
+}
+
+/* 文章详情页头标题 */
+.el-page-header__content {
+  color: #909399 !important;
+  font-size: 14px !important;
+}
+
+/* 时间线颜色 */
+.el-timeline-item__tail {
+  border-color: #C0C4CC !important;
+}
