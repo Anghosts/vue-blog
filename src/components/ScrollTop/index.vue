@@ -5,6 +5,8 @@
     size="small " 
     icon="el-icon-arrow-up" 
     @click="scrollTop"
+    v-show="show"
+    title="返回顶部"
   ></el-button>
 </template>
 
@@ -15,6 +17,7 @@ export default {
     return {
       timer: null,  // 定时器
       y: 0,
+      show: false
     }
   },
   methods: {
@@ -28,6 +31,15 @@ export default {
         document.documentElement.scrollTop = this.y + steps;
       }, 15)
     }
+  },
+  mounted() {
+    document.addEventListener('scroll', () => {
+      if (document.documentElement.scrollTop <= 0) {
+        this.show = false;
+      } else {
+        this.show = true;
+      }
+    })
   }
 }
 </script>

@@ -1,19 +1,6 @@
 <template>
   <div class="main-right">
-    <el-timeline class="index">
-      <el-timeline-item 
-        :timestamp="post.time" 
-        placement="top"
-        color="#C0C4CC"
-        v-for="post in postList"
-        :key="post.id"
-      >
-        <el-card>
-          <h4>{{post.title}}</h4>
-          <p>{{post.author}} 提交于 {{post.time}}</p>
-        </el-card>
-      </el-timeline-item>
-    </el-timeline>
+    
   </div>
 </template>
 

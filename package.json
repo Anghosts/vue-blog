@@ -47,5 +47,17 @@
     "> 1%",
     "last 2 versions",
     "not dead"
-  ]
+  ],
+  "description": "```\r npm install\r ```",
+  "main": "babel.config.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Anghosts/vue-blog.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Anghosts/vue-blog/issues"
+  },
+  "homepage": "https://github.com/Anghosts/vue-blog#readme"
 }

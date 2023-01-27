@@ -49,7 +49,7 @@
     </div>
     <div class="empty"></div>
     <Copyright />
-    <ScrollTop v-show="showScrollTop"/>
+    <ScrollTop />
   </div>
 </template>
 
@@ -65,7 +65,6 @@ export default {
       detailList: [], // [0]: 上一篇，[1]: 本篇，[2]: 下一篇
       postData: '',
       isContent: false,
-      showScrollTop: false
     }
   },
   methods: {
@@ -78,7 +77,6 @@ export default {
           // 获取文章详细内容
           this.postData = await reqGetPostData(this.detailList[1].postUrl);
           this.isContent = true;
-          this.showScrollTop = true;
         }
       }).catch(err => {
         console.log(err);
@@ -103,21 +101,23 @@ export default {
   position: relative;
   .page-head {
     padding: 10px 8px;
-    border-radius: 5px;
+    // border-radius: 5px;
     color: var(--text-color);
     border: 1px solid var(--border-color);
     background-color: var(--content-bg-color);
   }
   .detail-content {
     flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     font-family: 'smiley-sans';
     box-sizing: border-box;
-    margin: 5px 0 0;
     padding: 20px 30px 10px;
-    border-radius: 5px;
     font-size: 1.1em;
     color: @textColor;
     border: 1px solid var(--border-color);
+    border-top: none;
     background-color: var(--content-bg-color);
     .post-head {
       >h1 {
@@ -196,7 +196,7 @@ export default {
   .empty {
     margin-top: 5px;
     height: 75px;
-    border-radius: 5px;
+    // border-radius: 5px;
     border: 1px solid var(--border-color);
     background-color: var(--content-bg-color);
   }

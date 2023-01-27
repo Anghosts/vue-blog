@@ -6,6 +6,7 @@
   --gutter-bg-color: #ddd;
   --logo-bg-color: #6f86d6;
   --text-color: #777;
+  --text-white: #fff;
   --border-color: #DCDFE6;
   --border-sw-color: #DCDFE6;
   --blockquote-color: #bbb;
@@ -16,7 +17,7 @@
   --table-row-odd-bg-color: #282828;
   --table-row-hover-bg-color: #363636;
   --menu-item-bg-color: #f8f8f8;
-  --theme-color: #fc6423;
+  --theme-color: #6f86d6;
   --btn-default-bg: #6f86d6;
   --btn-default-color: #ccc;
   --btn-default-border-color: #555;
@@ -27,5 +28,6 @@
   --highlight-foreground: #fff;
   --highlight-gutter-background: #323131;
   --highlight-gutter-foreground: #e8e8e8;
+  --box-shadow: none;
   color-scheme: light;
 }

@@ -1,5 +1,6 @@
 <template>
-  <div id="app">
+  <div id="app" :class="theme">
+    <div class="color-bar"></div>
     <router-view></router-view>
   </div>
 </template>
@@ -9,7 +10,21 @@
 export default {
   name: 'App',
   data() {
-    return {}
+    return {
+      theme: ''
+    }
+  },
+  methods: {
+    // 切换主题事件回调
+    switchTheme(theme) {
+      this.theme = theme;
+      // 改变滚动条样式
+      document.documentElement.style.colorScheme = theme;
+    }
+  },
+  mounted() {
+    // 绑定切换主题的全局事件
+    this.$bus.$on('switchTheme', this.switchTheme);
   }
 }
 </script>
@@ -24,6 +39,11 @@ export default {
   box-sizing: border-box;
   height: 100%;
   background-color: var(--body-bg-color);
+
+  .color-bar {
+    height: 3px;
+    background-color: var(--theme-color);
+  }
 }
 
 .content-main {
@@ -33,12 +53,12 @@ export default {
   justify-content: space-between;
   margin: 0 auto;
   width: calc(100% - 20px);
-  min-height: 100vh;
+  min-height: calc(100vh - 3px);
   color: @textColor;
   .main-right {
     display: flex;
     flex-direction: column;
-    margin-top: 7px;
+    // margin-top: 7px;
     width: calc(100% - 252px);
   }
 }
@@ -84,6 +104,11 @@ export default {
 @media (min-width: 1300px) {
   .content-main {
     width: 1160px;
+    .main-right {
+      .detail-content {
+        font-size: 1em !important;
+      }
+    }
   }
 }
 @media (min-width: 1600px) {
@@ -93,18 +118,6 @@ export default {
   .nav ul li {
     font-size: 16px !important;
   }
-  .art-item {
-    width: 33.33% !important;
-    &:nth-child(3) {
-      border-top: 1px solid var(--border-color) !important;
-    }
-    &:nth-child(3n) {
-      border-right: 1px solid var(--border-color) !important;
-    }
-    &:nth-child(even) {
-      border-right: 0 !important;
-    }
-  }
 }
 </style>
->>>>>>> f4cc2dd (小更新)
+

@@ -83,6 +83,7 @@ export default {
   //  切换主题
   switchTheme(theme) {
     this.theme = theme;
+    this.$bus.$emit('switchTheme', theme);
   }
  },
  mounted() {
@@ -103,10 +104,10 @@ export default {
     align-items: center;
     padding: 0 10px;
     padding-left: 20px;
-    margin-bottom: 5px;
     height: 44px;
     line-height: 44px;
     border: 1px solid var(--border-color);
+    border-bottom: none;
     background-color: var(--content-bg-color);
     
     .search {
@@ -125,10 +126,6 @@ export default {
         border: none;
         outline: none;
         background-color: var(--content-bg-color);
-
-        &:focus {
-          border-bottom: 2px solid #999;
-        }
       }
     }
 
@@ -211,9 +208,9 @@ export default {
   }
   .bottom-pagination {
     padding: 15px;
-    margin-top: 5px;
     text-align: center;
     border: 1px solid var(--border-color);
+    border-top: none;
     background-color: var(--content-bg-color);
   }
 }

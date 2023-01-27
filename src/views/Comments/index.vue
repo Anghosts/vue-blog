@@ -119,7 +119,7 @@ export default {
       margin-top: 0;
       margin-left: 10px;
       font-weight: 600;
-      color: var(--text-color);
+      color: var(--text-white);
       border-color: var(--btn-default-bg);
       background-color: var(--btn-default-bg);
       &:hover {

@@ -16,7 +16,6 @@ import router from './router';
 import '@/utils/mock';
 // 引入全局组件
 import Copyright from '@/components/Copyright';
-import PageStatus from '@/components/PageStatus';
 import ScrollTop from '@/components/ScrollTop';
 // 引入SmileySans字体
 import '@/assets/font/smiley-sans/SmileySans.css';
@@ -25,7 +24,6 @@ import '@/assets/font/smiley-sans/SmileySans.css';
 Vue.use(ElementUI);
 // 注册全局组件
 Vue.component(Copyright.name, Copyright);
-Vue.component(PageStatus.name, PageStatus);
 Vue.component(ScrollTop.name, ScrollTop);
 
 Vue.config.productionTip = false;

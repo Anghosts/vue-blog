@@ -69,6 +69,7 @@ export default {
 
 .content-main {
   .header-nav {
+    margin-bottom: 5px;
     width: 240px;
     font-family: 'smiley-sans';
     .logo {

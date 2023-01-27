@@ -1,12 +1,13 @@
-@media (prefers-color-scheme: dark) {
-  :root {
+
+  :root .dark {
     --body-bg-color: #282828;
     --content-bg-color: #333;
     --card-bg-color: #555;
     --code-bg-color: #1c1b1b;
     --gutter-bg-color: #333;
-    --logo-bg-color: #3b3b3b;
+    --logo-bg-color: #6f86d6;
     --text-color: #ccc;
+    --text-white: #ccc;
     --border-color: #282828;
     --border-sw-color: #555;
     --blockquote-color: #bbb;
@@ -17,7 +18,7 @@
     --table-row-odd-bg-color: #282828;
     --table-row-hover-bg-color: #363636;
     --menu-item-bg-color: #555;
-    --theme-color: #fc6423;
+    --theme-color: #6f86d6;
     --btn-default-bg: #333;
     --btn-default-color: #ccc;
     --btn-default-border-color: #555;
@@ -28,28 +29,28 @@
     --highlight-foreground: #fff;
     --highlight-gutter-background: #323131;
     --highlight-gutter-foreground: #e8e8e8;
+    --box-shadow: 0 10px 30px 0 rgb(0 0 0 / 40%);
     color-scheme: dark;
   }
 
-  .header-nav {
+  .dark .header-nav {
     box-shadow: 0 2px 2px 0 rgb(0 0 0 / 12%), 0 3px 1px -2px rgb(0 0 0 / 6%), 0 1px 5px 0 rgb(0 0 0 / 12%);
   }
 
-  .el-pagination button {
+  .dark .el-pagination button {
     background-color: transparent !important;
   }
-  .el-pagination .el-pager .number {
+  .dark .el-pagination .el-pager .number {
     background-color: transparent !important;
   }
-  .el-textarea textarea {
+  .dark .el-textarea textarea {
     border-color: var(--content-bg-color);
     color: var(--text-color);
     background-color: var(--content-bg-color) !important;
   }
-  .el-textarea textarea:focus {
+  .dark .el-textarea textarea:focus {
     border: 1px solid var(--card-bg-color);
   }
-  .el-textarea textarea:hover {
+  .dark .el-textarea textarea:hover {
     border: 1px solid var(--card-bg-color);
   }
-}
