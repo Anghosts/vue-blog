@@ -23,9 +23,6 @@ const constantRoutes = [
         path: '',
         name: 'Home',
         component: ()=>import('@/views/Home'),
-        meta: {
-          homeNav: true,
-        }
       }, {
         path: 'article',
         name: 'Article',

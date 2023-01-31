@@ -115,9 +115,6 @@ export default {
   .content-main {
     width: 1350px;
   }
-  .nav ul li {
-    font-size: 16px !important;
-  }
 }
 </style>
 

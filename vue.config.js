@@ -5,6 +5,8 @@ module.exports = defineConfig({
 
   // 代理跨域
   devServer: {
+    open: true,
+    host: 'localhost',
     proxy: {
       '/api': {
         target: 'http://localhost:9000',

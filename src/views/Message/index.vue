@@ -36,6 +36,7 @@ export default {
 <style lang="less" scoped>
 .main-right {
   display: flex;
+  flex-direction: row;
   margin-bottom: 7px;
   .message-left {
     flex: 1;

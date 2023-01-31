@@ -1,11 +1,11 @@
 <template>
   <div class="main-right">
+    <h1 class="title">留言板</h1>
     <div class="msg-edit">
       <el-input class="textIpt" type="textarea" v-model="sendMsg" placeholder="说点什么" autosize></el-input>
       <el-button type="primary" class="send-btn" @click="commentsSend">发 布</el-button>
     </div>
     <div class="comments-content">
-      <div class="title">全部留言（{{commentsInfo.total || 0}}）</div>
       <div class="comments-list">
         <div class="comments-item" v-for="comments in commentsInfo.list" :key="comments.id">
           <el-avatar src="https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png" class="userPortrait"></el-avatar>
@@ -110,6 +110,15 @@ export default {
 
 <style lang="less" scoped>
 .main-right {
+  .title {
+    padding: 30px 0;
+    margin-bottom: 5px;
+    text-align: center;
+    font-size: 1.4em;
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+    background-color: var(--content-bg-color);
+  }
   .msg-edit {
     display: flex;
     .textIpt {
@@ -134,20 +143,10 @@ export default {
     display: flex;
     flex-direction: column;
     margin-top: 5px;
-    .title {
-      font-family: 'smiley-sans';
-      margin-bottom: 5px;
-      padding: 14px 10px;
-      border-radius: 5px;
-      color: var(--text-color);
-      border: 1px solid var(--border-color);
-      background-color: var(--content-bg-color);
-    }
     .comments-list {
       flex: 1;
       padding-left: 5px;
       padding-top: 10px;
-      border-radius: 5px;
       border: 1px solid var(--border-color);
       background-color: var(--content-bg-color);
     }
@@ -155,7 +154,6 @@ export default {
       margin: 5px 0;
       padding: 15px;
       text-align: center;
-      border-radius: 5px;
       border: 1px solid var(--border-color);
       background-color: var(--content-bg-color);
     }

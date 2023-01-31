@@ -1,5 +1,6 @@
 <template>
     <div class="main-right">
+      <h1 class="title">文章</h1>
       <div class="top-menu">
         <div class="search">
           <label>
@@ -98,6 +99,15 @@ export default {
 @BG: #fff;
 
 .main-right {
+  .title {
+    padding: 30px 0;
+    margin-bottom: 5px;
+    text-align: center;
+    font-size: 1.4em;
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+    background-color: var(--content-bg-color);
+  }
   .top-menu {
     display: flex;
     justify-content: space-between;
@@ -107,7 +117,6 @@ export default {
     height: 44px;
     line-height: 44px;
     border: 1px solid var(--border-color);
-    border-bottom: none;
     background-color: var(--content-bg-color);
     
     .search {
@@ -142,7 +151,6 @@ export default {
     }
   }
   .art-list-content {
-    // min-height: 240px;
     &::after {
       content: '';
       display: table;
@@ -166,10 +174,6 @@ export default {
       border-right: 0;
       background-color: var(--content-bg-color);
       cursor: pointer;
-      &:nth-child(1),
-      &:nth-child(2) {
-        border-top: 1px solid var(--border-color);
-      }
       &:nth-child(even) {
         border-right: 1px solid var(--border-color);
       }

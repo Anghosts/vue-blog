@@ -2,8 +2,11 @@
   <div class="content-main">
     <div class="aside">
       <div class="header-nav">
-        <div class="logo"><h1><router-link to="/">Anghost</router-link></h1></div>
-        <nav class="nav">
+        <div class="logo">
+          <div class="nav-sw" @click="handleNav" :class="{show: isShowNav}"><i class="el-icon-arrow-down"></i></div>
+          <h1><router-link to="/">Anghost</router-link></h1>
+          </div>
+        <nav class="nav" :class="{show: isShowNav}">
           <ul>
             <li :class="{active: activePath == '/'}" @click="handleRouter('/')"><i class="el-icon-s-home"></i>主页</li>
             <li :class="{active: activePath == 'article'}" @click="handleRouter('/article')"><i class="el-icon-tickets"></i>文章</li>
@@ -31,7 +34,7 @@ export default {
   name: 'TopNav',
   data() {
     return {
-      isShowNav: true,
+      isShowNav: false,
       homeNav: false,
       activePath: '',
     }
@@ -57,6 +60,10 @@ export default {
       // 切换当前路由路径
       this.activePath = path.split('/')[1] || '/';
       this.$router.push(path);
+    },
+    // 导航的显示切换
+    handleNav() {
+      this.isShowNav = !this.isShowNav;
     }
   }
 }
@@ -73,18 +80,38 @@ export default {
     width: 240px;
     font-family: 'smiley-sans';
     .logo {
+      position: relative;
+      display: flex;
+      align-items: center;
       padding: 40px 0;
       text-align: center;
       background-color: var(--logo-bg-color);
+      .nav-sw {
+        display: none;
+        position: absolute;
+        left: 20px;
+        color: #fff;
+        font-size: 24px;
+        cursor: pointer;
+        transition: all .3s;
+        transform-origin: center;
+        &.show {
+          transform: rotate(180deg);
+        }
+      }
+      >h1 {
+        flex: 1;
+      }
       a {
         font-size: 28px;
         color: #fff;
       }
     }
     .nav {
-      padding: 15px 0;
+      overflow: hidden;
       background-color: var(--content-bg-color);
       ul {
+        margin: 15px 0;
         .active {
           color: #6f86d6;
           background-color: var(--menu-item-bg-color);
@@ -92,7 +119,7 @@ export default {
         li {
           box-sizing: border-box;
           padding: 5px 20px;
-          font-size: 14px;
+          font-size: 16px;
           line-height: 2;
           color: var(--text-color);
           cursor: pointer;
@@ -106,7 +133,21 @@ export default {
           }
         }
       }
+      &.show {
+        height: 240px;
+      }
     }
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .logo {
+    .nav-sw {
+      display: block !important;
+    }
+  }
+  .nav {
+    height: 0;
   }
 }
 </style>
