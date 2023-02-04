@@ -1,32 +1,27 @@
 <template>
   <div class="main-right">
-    
+    <Todolist />
   </div>
 </template>
 
 <script>
-import { reqGetArticleList } from '@/api';
+import Todolist from './Todolist'
 
 export default {
   name: 'Home',
+  components: {
+    Todolist
+  },
   data() {
     return {
       postList: []
     }
   },
   methods: {
-    // 发送请求，获取文章数据
-    async getArtList() {
-      await reqGetArticleList({page: 1,limit: 20})
-      .then((result) => {
-        this.postList = result.data.list;
-      }).catch((err) => {
-        console.log(err);
-      });
-    }
+
   },
   mounted() {
-    this.getArtList();
+
   }
 }
 </script>

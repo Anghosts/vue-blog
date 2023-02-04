@@ -9,8 +9,8 @@
           </label>
         </div>
         <div class="light-dark">
-          <i class="el-icon-sunny" v-if="theme === 'light'" @click="switchTheme('dark')"></i>
-          <i class="el-icon-moon" v-else @click="switchTheme('light')"></i>
+          <i class="el-icon-moon" v-if="theme === 'light'" @click="switchTheme('dark')"></i>
+          <i class="el-icon-sunny" v-else @click="switchTheme('light')"></i>
         </div>
       </div>
       <div class="art-list-content">
@@ -53,7 +53,7 @@ export default {
     postList: {},
     loading: true,
     searchKeyword: '',
-    theme: 'light'
+    theme: localStorage.getItem('theme')
   }
  },
  methods: {
@@ -85,6 +85,7 @@ export default {
   switchTheme(theme) {
     this.theme = theme;
     this.$bus.$emit('switchTheme', theme);
+    localStorage.setItem('theme', theme);
   }
  },
  mounted() {

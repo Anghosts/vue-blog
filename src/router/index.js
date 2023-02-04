@@ -25,7 +25,7 @@ const constantRoutes = [
         component: ()=>import('@/views/Home'),
       }, {
         path: 'article',
-        name: 'Article',
+        // name: 'Article',
         component: ()=>import('@/views/Article'),
         children: [{
           path: '',
@@ -48,7 +48,7 @@ const constantRoutes = [
         }]
       }, {
         path: 'message',
-        name: 'Message',
+        // name: 'Message',
         component: ()=>import('@/views/Message'),
         children: [{
           path: '',

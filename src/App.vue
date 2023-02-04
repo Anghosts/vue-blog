@@ -25,6 +25,9 @@ export default {
   mounted() {
     // 绑定切换主题的全局事件
     this.$bus.$on('switchTheme', this.switchTheme);
+    // 获取当前主题
+    this.theme = localStorage.getItem('theme');
+    this.switchTheme(this.theme);
   }
 }
 </script>
@@ -58,7 +61,6 @@ export default {
   .main-right {
     display: flex;
     flex-direction: column;
-    // margin-top: 7px;
     width: calc(100% - 252px);
   }
 }
@@ -82,6 +84,7 @@ export default {
   .content-main {
     flex-direction: column;
     justify-content: start;
+    width: 100%;
     .header-nav {
       width: 100% !important;
       .logo {
@@ -89,7 +92,8 @@ export default {
       }
     }
     .main-right {
-      width: 100%;
+      margin: 0 auto;
+      width: calc(100% - 10px);
       flex: 1;
     }
   }
@@ -99,6 +103,15 @@ export default {
   .detail-content {
     padding: 15px 15px 10px !important;
     font-size: 1em !important;
+  }
+  .todolist {
+    flex-direction: column;
+    .todo {
+      border-bottom: 1px solid var(--border-color);
+    }
+    .todo-check {
+      border-left: none !important;
+    }
   }
 }
 @media (min-width: 1300px) {

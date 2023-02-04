@@ -109,6 +109,7 @@ export default {
     }
     .nav {
       overflow: hidden;
+      transition: height .3s;
       background-color: var(--content-bg-color);
       ul {
         margin: 15px 0;
