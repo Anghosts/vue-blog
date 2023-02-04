@@ -1,21 +1,21 @@
-# vue2-blog-app
+# Vue2 个人博客项目
 
-## Project setup
+### 安装依赖
 ```
 npm install
 ```
 
-### Compiles and hot-reloads for development
+### 启动项目
 ```
 npm run dev
 ```
 
-### Compiles and minifies for production
+### 项目打包
 ```
 npm run build
 ```
 
-### Lints and fixes files
+### 检查和修复文件
 ```
 npm run lint
 ```
