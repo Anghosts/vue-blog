@@ -296,6 +296,10 @@ export default {
       color: var(--text-color);
       padding: 10px;
       border-bottom: 1px solid var(--border-color);
+
+      h1 {
+        font-size: 1.05em;
+      }
     }
   }
 }
